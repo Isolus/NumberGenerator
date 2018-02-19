@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="8300111.de">  
+  <script src="javascript/JsBarcode.itf.min.js"></script>
+  <script src="javascript/javascript.js"></script>
+  <script src="javascript/LuhnDigit.js"></script>
+  <title>Nummern Generator</title>
+  </head>
+<body style="max-width:600px">
+<p>Nummern Generator</p>
+  <p>alte Nummer: <input type="text" id="oldNumber" style="width:80px"> (7-9 Stellen)</p>
+  <button type="button"  onclick="calculateButton()">Berechne</button> 
+  <br>
+  <p>neue Nummer:<div id="newNumber">xxx</div><br>Barcode im ITF Format:</p>
+  <canvas id="barcode" style="display:none;"></canvas>
+  <a target="_blank" href="#" id="imageLink" download="#"><img id="canvasImg" style="max-width: 90vw;"></a>
+  <p><small>(zum Download / Speichern klicken)</small></p>
+  
+  <hr>
+  Die eigegebene, vorhandene 7 bis 9-stellige Zahl wir mit "631" multipliziert. Daraus sollte eine 10 bis 12-stellige Zahln entstehen, über die mit dem <a target="_blank" href="http://www.dereferer.org/?https%3A%2F%2Fde%2Ewikipedia%2Eorg%2Fwiki%2FLuhn%2DAlgorithmus">"Luhn-Algorithmus"</a> eine Prüfziffer erstellt und angehängt wird. Vorangestellt wird dann die Zahl 3, gefolgt von so vielen Nullen, dass man auf 16 Stellen insgesamt kommt. Diese Rechenoperationen sind nicht geheim und können von einem Grundschüler auf einem Blatt Papier durchgeführt werden.
+  <br><br>
+  Kurz:<br>“3”+”[so viele ‘0’, dass die Zahl insgesamt 16 Stellen hat]”+”[alte Nummer*631]”+”[Prüfziffer nach Luhn über 'alte Nummer*631’]” , ergibt eine 16 stellige Zahl.<br>
+  <br>Ausführlicher Bericht zu diesem Thema: <a target="_blank" href="https://8300111.de/neue-dhl-packstation-karten-barcode-fuer-neue-karte-aus-postnummer-errechnen/">https://8300111.de/neue-dhl-packstation-karten-barcode-fuer-neue-karte-aus-postnummer-errechnen/</a><br><hr><br>
+  <p>Die Erstellung und Verwendung der Seite / des Codes dient nur zur privaten, legalen Forschungszwecken. Der Missbrauch ist natürlich nicht erlaubt. Es besteht keinerlei Verbindung zu DHL Paket GmbH, auch wurden keine Hacks oder sonstigen illegalen Methoden während der Forschung verwendet. Der Luhn-Algorithmus wurde vor über 60 Jahren entwickelt und ist heute gemeinfrei. Der Barcode wird mit <a target="_blank" href="https://github.com/lindell/JsBarcode">JsBarcode</a> erzeugt. Es werden keinerlei Eingaben serverseitig gespeichert, die Seite besteht nur aus lokal ausgeführtem JavaScript und HTML.</p>
+
+ </body>
+</html>
