@@ -26,5 +26,5 @@ function getLuhnCheckDigit (number) {
     isOdd = !isOdd;
     sum += parseInt(addValue);
   }    
-  return (10 - (sum % 10));  
+  return ((10 - (sum % 10)) % 10);  
 }
