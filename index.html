@@ -18,7 +18,8 @@
   <canvas id="barcode" style="display:none;"></canvas>
   <a target="_blank" href="#" id="imageLink" download="#"><img id="canvasImg" style="max-width: 90vw;"></a>
   <p><small>(zum Download / Speichern klicken)</small></p>
-  
+  <p>Barcode Höhe: <input type="number" id="bc_height" style="width:45px" value="100">, Breite:<input type="number" id="bc_width" style="width:30px" value="2"> <button type="button"  onclick="calculateButton()">Ok</button> </p>
+
   <hr>
   Die eigegebene, vorhandene 7 bis 9-stellige Zahl wir mit "631" multipliziert. Daraus sollte eine 10 bis 12-stellige Zahln entstehen, über die mit dem <a target="_blank" href="http://www.dereferer.org/?https%3A%2F%2Fde%2Ewikipedia%2Eorg%2Fwiki%2FLuhn%2DAlgorithmus">"Luhn-Algorithmus"</a> eine Prüfziffer erstellt und angehängt wird. Vorangestellt wird dann die Zahl 3, gefolgt von so vielen Nullen, dass man auf 16 Stellen insgesamt kommt. Diese Rechenoperationen sind nicht geheim und können von einem Grundschüler auf einem Blatt Papier durchgeführt werden.
   <br><br>
